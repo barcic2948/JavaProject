@@ -1,0 +1,7 @@
+model\Matrix.class
+view\MatrixService.class
+controller\MatrixController.class
+controller\Main.class
+model\MatrixDeterminant.class
+model\MatrixDimensionException.class
+model\MatrixParseException.class

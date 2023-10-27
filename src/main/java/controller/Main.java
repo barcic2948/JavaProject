@@ -7,7 +7,7 @@ package controller;
 public class Main {
     /**
      *
-     * @param args Console line
+     * @param args Console line arguments
      */
     public static void main(String[] args) {
         System.out.println("Hello World!");

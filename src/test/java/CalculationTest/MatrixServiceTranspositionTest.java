@@ -19,8 +19,8 @@ public class MatrixServiceTranspositionTest {
     }
 
     private boolean compareMatrix(Matrix a, Double[][] tab) {
-        for (int i = 0; i < a.getDimY(); i++) {
-            for (int j = 0; j < a.getDimX(); j++) {
+        for (int i = 0; i < a.getNumberOfRows(); i++) {
+            for (int j = 0; j < a.getNumberOfColumns(); j++) {
                 if (!Objects.equals(a.getMatrixValueAtPos(j, i), tab[i][j])) {
                     return false;
                 }

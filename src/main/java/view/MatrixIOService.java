@@ -27,7 +27,7 @@ public class MatrixIOService {
     }
 
     public String getValueWithMessage(String message) {
-        System.out.println(message);
+        System.out.print(message);
         return scanner.nextLine();
     }
 
@@ -49,10 +49,29 @@ public class MatrixIOService {
         System.out.println(message);
     }
 
+    public void printMatrixFillSchema(int x, int y) {
+
+        System.out.println('\n');
+
+        String[][] tab = new String[y][x];
+
+        for (int i = 0; i < y; i++) {
+            for (int j = 0; j < x; j++) {
+                tab[i][j] = new String("["+ j + "," + i + "]");
+            }
+        }
+
+        for (String[] s : tab) {
+            System.out.println(Arrays.toString(s));
+        }
+        System.out.println('\n');
+    }
+
     public void printHelp() {
         System.out.println(
                 """
                         ||=======================================================================================================||
+                        ||  The program could not identify the initial command line arguments.                                   ||
                         ||  This is a help page for the application. The data when running the program from the command line     ||
                         ||  (command line arguments) is read as follows:                                                         ||
                         ||                                                                                                       ||

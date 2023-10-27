@@ -1,8 +1,9 @@
 package controller;
 
-import model.Matrix;
+import model.*;
 import view.MatrixIOService;
-import model.MatrixService;
+
+import javax.naming.BinaryRefAddr;
 
 /**
  * Main class of the application realizing the operation of praising data and calculating matrix determinant.
@@ -43,7 +44,30 @@ public class MatrixController {
 
     }
 
+    private void fillMatrix() {
+
+        matrixIOService.printMatrixFillSchema(matrix.getNumberOfColumns(), matrix.getNumberOfRows());
+
+        for(int i = 0; i < matrix.getNumberOfRows(); i++) {
+            for(int j = 0; j < matrix.getNumberOfColumns(); j++) {
+                while (true) {
+                    try {
+                        matrix.setMatrixValueAtPos(j, i, matrixIOService.setNumber(j, i));
+                        break;
+                    } catch (MatrixParseException e) {
+                        matrixIOService.printExceptionMessage(e);
+                    }
+                }
+            }
+        }
+        matrixIOService.printMessage("\n============================\n");
+        matrixIOService.printMatrix(this.matrix);
+        matrixIOService.printMessage("\n============================\n");
+    }
+
+
     /**
+     *
      *
      * @param args
      */
@@ -51,12 +75,19 @@ public class MatrixController {
 
         MatrixOperationTypeEnum matrixOperationTypeEnum;
         String input;
+        String numberOfRows;
+        String numberOfColumns;
 
-        if (args.length == 3) input = args[0];
-        else {
+        if (args.length == 3) {
+            input = args[0];
+            numberOfRows = args[1];
+            numberOfColumns = args[2];
+        } else {
             matrixIOService.printHelp();
             matrixIOService.printMessage("You may select your command now or close the program with \"--escape\"");
             input = matrixIOService.getValueWithMessage("If you wish to select the operation, please enter it now: ");
+            numberOfRows = "";
+            numberOfColumns = "";
         }
 
         while (true) {
@@ -69,32 +100,40 @@ public class MatrixController {
             }
         }
 
-        //if (MatrixOperationTypeEnum.ESCAPE.equals(matrixOperationTypeEnum)) return;
+        if (MatrixOperationTypeEnum.ESCAPE.equals(matrixOperationTypeEnum)) return;
 
-        switch (matrixOperationTypeEnum) {
-            case ESCAPE:
-                System.out.println("Escape");
-                return;
-            case HELP:
-                System.out.println("Help");
+        while (true) {
+            try {
+                matrix = new Matrix(numberOfColumns, numberOfRows);
                 break;
-            case TRANSPOSE:
-                System.out.println("Transpose");
-                break;
-            case DETERMINANT:
-                System.out.println("Determinanat");
-                break;
-
+            } catch (MatrixDimensionException e) {
+                if(MatrixDimensionEnum.COLUMNS.equals(e.getEnum())) {
+                    numberOfColumns = matrixIOService.getValueWithMessage(
+                            "Value for the number of COLUMNS is wrong or missing, please correct it: ");
+                } else {
+                    numberOfRows = matrixIOService.getValueWithMessage(
+                            "Value for the number of ROWS is wrong or missing, please correct it: ");
+                }
+            }
         }
 
+        fillMatrix();
 
-        System.out.println("Should escape");
+        matrixService = new MatrixService();
 
+        switch (matrixOperationTypeEnum) {
+            case TRANSPOSE:
+                matrixIOService.printMatrix(matrixService.transposeMatrix(matrix));
+                break;
+            case DETERMINANT:
+                matrixIOService.printMessage("Result: " + matrixService.calculateDeterminant(matrix));
+                break;
+        }
 
     }
 
-    private void help() {
-        matrixIOService.printHelp();
+    public void serviceMatrix() {
+
     }
 
     /**

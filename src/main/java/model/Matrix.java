@@ -9,42 +9,42 @@ package model;
  * @author Bartek
  */
 public class Matrix {
-    private int dimX;
-    private int dimY;
+    private int numberOfColumns;
+    private int numberOfRows;
     private Double[][] mat;
-    public int getDimX() {
-        return dimX;
+    public int getNumberOfColumns() {
+        return numberOfColumns;
     }
-    public int getDimY() {
-        return dimY;
+    public int getNumberOfRows() {
+        return numberOfRows;
     }
     public Double[][] getMat() {
         return mat;
     }
     public Matrix() {}
-    public Matrix(String dimX, String dimY) throws MatrixDimensionException {
+    public Matrix(String numberOfColumns, String numberOfRows) throws MatrixDimensionException {
         try {
-            this.dimX = Integer.parseInt(dimX);
+            this.numberOfColumns = Integer.parseInt(numberOfColumns);
         } catch (NumberFormatException e) {
-            throw new MatrixDimensionException("X", dimX);
+            throw new MatrixDimensionException(MatrixDimensionEnum.COLUMNS, numberOfColumns);
         }
         try {
-            this.dimY = Integer.parseInt(dimY);
+            this.numberOfRows = Integer.parseInt(numberOfRows);
         } catch (NumberFormatException e) {
-            throw  new MatrixDimensionException("Y", dimY);
+            throw  new MatrixDimensionException(MatrixDimensionEnum.ROWS, numberOfRows);
         }
-        this.mat = new Double[this.dimY][this.dimX];
+        this.mat = new Double[this.numberOfRows][this.numberOfColumns];
     }
-    public Matrix(int dimX, int dimY) {
-        this.dimX = dimX;
-        this.dimY = dimY;
-        this.mat = new Double[this.dimY][this.dimX];
+    public Matrix(int numberOfColumns, int numberOfRows) {
+        this.numberOfColumns = numberOfColumns;
+        this.numberOfRows = numberOfRows;
+        this.mat = new Double[this.numberOfRows][this.numberOfColumns];
     }
     public Matrix(Double[][] mat) {
-        this.dimX = mat[0].length;
-        this.dimY = mat.length;
-        this.mat = new Double[this.dimY][this.dimX];
-        System.arraycopy(mat, 0, this.mat, 0, this.dimY);
+        this.numberOfColumns = mat[0].length;
+        this.numberOfRows = mat.length;
+        this.mat = new Double[this.numberOfRows][this.numberOfColumns];
+        System.arraycopy(mat, 0, this.mat, 0, this.numberOfRows);
     }
     public void setMatrixValueAtPos(int x, int y, String value) throws MatrixParseException {
         try {

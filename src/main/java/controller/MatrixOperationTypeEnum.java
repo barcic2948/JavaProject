@@ -3,7 +3,6 @@ package controller;
 public enum MatrixOperationTypeEnum {
     TRANSPOSE("--transpose"),
     DETERMINANT("--determinant"),
-    HELP("--help"),
     ESCAPE("--escape");
 
     private String value;

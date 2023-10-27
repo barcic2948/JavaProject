@@ -6,6 +6,7 @@ package controller;
  */
 public class Main {
     /**
+     * the main function from which the program runs
      *
      * @param args Console line arguments
      */

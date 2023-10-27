@@ -16,7 +16,7 @@ public class MatrixController {
     /**
      * Matrix service object
      */
-    private MatrixIOService matrixIOService;
+    private final MatrixIOService matrixIOService;
 
     /**
      * Matrix service object
@@ -40,6 +40,8 @@ public class MatrixController {
      *
      * @param args Input list of strings that should be directly provided form the command line args.
      */
+
+    //Without
     public void run2(String[] args) {
 
     }
@@ -130,22 +132,6 @@ public class MatrixController {
                 break;
         }
 
-    }
-
-    public void serviceMatrix() {
-
-    }
-
-    /**
-     *
-     */
-    public void calculateDeterminant() {
-
-        matrixIOService.printMatrix(this.matrix);
-
-        matrixService = new MatrixService();
-
-        matrixIOService.printDeterminant(matrixService.calculateDeterminant(this.matrix));
     }
 
 }

@@ -1,21 +1,15 @@
 package model;
 
 /**
- *
  * @author Bartek
  */
-public class MatrixDimensionException extends Exception{
+public class MatrixDimensionException extends Exception {
 
-    private String value;
     private MatrixDimensionEnum dimensionEnum;
 
-    public MatrixDimensionException(MatrixDimensionEnum dimensionEnum, String value) {
+    public MatrixDimensionException(MatrixDimensionEnum dimensionEnum) {
         super("Matrix dimension is not parseable");
-        this.value = value;
         this.dimensionEnum = dimensionEnum;
-    }
-    public String getDimension() {
-        return value;
     }
 
     public MatrixDimensionEnum getEnum() {

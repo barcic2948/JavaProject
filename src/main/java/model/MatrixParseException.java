@@ -1,7 +1,6 @@
 package model;
 
 /**
- *
  * @author Bartek
  */
 public class MatrixParseException extends Exception {

@@ -35,14 +35,12 @@ public class MatrixIOService {
         System.out.println(e.getMessage());
     }
 
-    public void printDeterminant(Double determinant) {
-        System.out.println("Your result is: " + determinant);
-    }
-
     public void printMatrix(Matrix matrix) {
+        System.out.print('\n');
         for (Double[] mat : matrix.getMat()) {
             System.out.println(Arrays.toString(mat));
         }
+        System.out.print('\n');
     }
 
     public void printMessage(String message) {
@@ -51,27 +49,25 @@ public class MatrixIOService {
 
     public void printMatrixFillSchema(int x, int y) {
 
-        System.out.println('\n');
+        System.out.println("\n This is the corresponding matrix with the coordinates of each element:\n");
 
         String[][] tab = new String[y][x];
 
         for (int i = 0; i < y; i++) {
             for (int j = 0; j < x; j++) {
-                tab[i][j] = new String("["+ j + "," + i + "]");
+                tab[i][j] = new String("[" + j + "," + i + "]");
             }
         }
 
         for (String[] s : tab) {
             System.out.println(Arrays.toString(s));
         }
-        System.out.println('\n');
     }
 
     public void printHelp() {
         System.out.println(
                 """
                         ||=======================================================================================================||
-                        ||  The program could not identify the initial command line arguments.                                   ||
                         ||  This is a help page for the application. The data when running the program from the command line     ||
                         ||  (command line arguments) is read as follows:                                                         ||
                         ||                                                                                                       ||

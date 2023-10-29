@@ -3,13 +3,10 @@ package controller;
 import model.*;
 import view.MatrixIOService;
 
-import java.util.PrimitiveIterator;
-
 /**
- * Main class of the application realizing the operation of praising data and calculating matrix determinant.
- *
+ * Main class of the application responsible for handling data received from IO-service and directing the model.
  * @author Bartek
- * @version 1.1
+ * @version 1.3
  */
 public class MatrixController {
 
@@ -34,6 +31,9 @@ public class MatrixController {
         matrixIOService = new MatrixIOService();
     }
 
+    /**
+     * Allows user to fill the matrix with Double values parsed from strings.
+     */
     private void fillMatrix() {
 
         matrixIOService.printMatrixFillSchema(matrix.getNumberOfColumns(), matrix.getNumberOfRows());
@@ -53,31 +53,76 @@ public class MatrixController {
         matrixIOService.printMatrix(this.matrix);
     }
 
+    /**
+     * Method used to select operation. Original version with the use of static enum class methode
+     * @deprecated
+     * @param input String containing operation name
+     * @return MatrixOperationTypeEnum element corresponding to the input
+     */
     private MatrixOperationTypeEnum selectOperation(String input) {
         while (true) {
             try {
                 return MatrixOperationTypeEnum.getEnum(input);
             } catch (IllegalArgumentException e) {
-                matrixIOService.printMessage("There seems to be an error in your command " + input + ".");
+                matrixIOService.printMessage("There seems to be an error in your command: " + input);
                 input = matrixIOService.getValueWithMessage("Please enter your command again: ");
             }
         }
     }
 
+    /**
+     * Method used to select operation. Proper version without the use of static methods.
+     * @param input String containing the user input operation name (can be incorrect)
+     * @return MatrixOperationTypeEnum element corresponding to the input
+     */
+    private MatrixOperationTypeEnum selectOperation2(String input) {
+        while (true) {
+            switch (input) {
+                case "--determinant":
+                    return MatrixOperationTypeEnum.DETERMINANT;
+                case "--transpose":
+                    return MatrixOperationTypeEnum.TRANSPOSE;
+                case "--help":
+                    return MatrixOperationTypeEnum.HELP;
+                case "--escape":
+                    return MatrixOperationTypeEnum.ESCAPE;
+                default:
+                    matrixIOService.printMessage("There seems to be an error in your command: " + input + ".");
+                    input = matrixIOService.getValueWithMessage("Please enter your command again: ");
+                    break;
+            }
+        }
+    }
+
+    /**
+     * Method that prepares the square matrix (creates new object, sets its dimension)
+     * If the input data is incorrect, the program will ask the user to correct it until it is.
+     * @param dimension String containing the matrix dimension specified by user input (can be incorrect)
+     * @return Matrix class object
+     */
     private Matrix prepareSquareMatrix(String dimension) {
         while (true) {
             try {
                 return new Matrix(dimension, dimension);
             } catch (MatrixDimensionException e) {
                 if (MatrixDimensionEnum.SQUARE.equals(e.getEnum())) {
-                    dimension = matrixIOService.getValueWithMessage("Value for the square matrix dimension is wrong or missing, please correct it: ");
+                    dimension = matrixIOService.getValueWithMessage(
+                            "Value for the square matrix dimension is wrong or missing, please correct it: ");
                 } else if (MatrixDimensionEnum.SIZE_COLUMNS.equals(e.getEnum())) {
-                    dimension = matrixIOService.getValueWithMessage("The maximum size of the matrix is 5 by 5, please correct the dimension: ");
+                    dimension = matrixIOService.getValueWithMessage(
+                            "The maximum size of the matrix is 5 by 5, please correct the dimension: ");
                 }
             }
         }
     }
 
+    /**
+     * Method that prepares the matrix (creates new object, sets its dimensions).
+     * If the input data is incorrect, the program will ask the user to correct it until it is.
+     * @param numberOfColumns String containing the number of columns specified by user input (can be incorrect)
+     * @param numberOfRows String containing the number of rows specified by user input (can be incorrect)
+     * @return Matrix class object
+     */
     private Matrix prepareMatrix(String numberOfColumns, String numberOfRows) {
         while (true) {
             try {
@@ -101,6 +146,7 @@ public class MatrixController {
     }
 
     /**
+     * The main controller method, used to coordinate View and Model classes and their methods.
      * @param args
      */
     public void run(String[] args) {
@@ -113,11 +159,13 @@ public class MatrixController {
             numberOfRows = args[1];
             numberOfColumns = "";
             cond = false;
+            matrixIOService.printMessage("Use --help to display instruction or --escape to exit the program");
         } else if (args.length == 3) {
             input = args[0];
             numberOfRows = args[1];
             numberOfColumns = args[2];
             cond = false;
+            matrixIOService.printMessage("Use --help to display instruction or --escape to exit the program");
         } else {
             matrixIOService.printHelp();
             cond = true;
@@ -128,8 +176,10 @@ public class MatrixController {
         while (true) {
             if (cond) {
                 input = matrixIOService.getValueWithMessage("If you wish to select the operation, please enter it now: ");
+            } else {
+                matrixIOService.printReadArgs(args);
             }
-            switch (selectOperation(input)) {
+            switch (selectOperation2(input)) { //Here is where the command can be exchanged with the static enum one.
                 case ESCAPE:
                     return;
                 case DETERMINANT:

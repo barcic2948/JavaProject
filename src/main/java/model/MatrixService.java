@@ -1,13 +1,22 @@
 package model;
 
 /**
+ * Class responsible for handling all mathematical operations on the Matrix object
  * @author Bartek
+ * @version 1.1
  */
 public class MatrixService {
 
-    private Matrix createSubMatrix(Matrix origin, Integer step) {
+    /**
+     * Helper methode used to create a minor matrix for the element designated by the step argument
+     * @param origin original matrix to be split
+     * @param step column with the element to create minor matrix for
+     * @return Matrix object containing the minor
+     */
+    private Matrix createSubMatrix(Matrix origin, int step) {
 
         Matrix next = new Matrix(origin.getNumberOfColumns() - 1, origin.getNumberOfRows() - 1);
+
 
         for (int i = 1; i < origin.getNumberOfColumns(); i++) {
             int j2 = 0;
@@ -21,6 +30,11 @@ public class MatrixService {
         return next;
     }
 
+    /**
+     * Recursive method used to calculate the determinant of a matrix with the minors methode
+     * @param matrix Input matrix for which we want to calculate the determinant
+     * @return Double result of the calculation
+     */
     public double calculateDeterminant(Matrix matrix) {
         double resoult;
 
@@ -39,6 +53,11 @@ public class MatrixService {
         return resoult;
     }
 
+    /**
+     * Methode for transposing matrix
+     * @param matrix Input matrix which we want to transpose
+     * @return Transposed Matrix object
+     */
     public Matrix transposeMatrix(Matrix matrix) {
 
         Matrix result = new Matrix(matrix.getNumberOfRows(), matrix.getNumberOfColumns());

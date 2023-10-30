@@ -2,13 +2,13 @@ package model;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Class that contains all the information about the matrix dimensions and the data
  * @author Bartek
- * @version 1.3
+ * @version 1.2
  */
 public class Matrix {
     /**
@@ -26,6 +26,9 @@ public class Matrix {
      */
     private List<List<Double>> mat;
 
+    /**
+     * Method for filling the matrix with null values. Necessary for set and get functions of the collection.
+     */
     private void prepareMatrix() {
         this.mat = new ArrayList<>(this.numberOfRows);
 
@@ -90,9 +93,9 @@ public class Matrix {
     }
 
     /**
-     * Matrix custom constructor for Integer values.
-     * Does not check if the dimensions are smaller than 5.
-     * Should not be used besides the MatrixService class
+     * Matrix custom constructor for Integer values
+     * Class designed for MatrixService and should only be used there
+     * Should only be used with correct values
      * @param numberOfColumns Integer value
      * @param numberOfRows Integer value
      */
@@ -103,9 +106,9 @@ public class Matrix {
     }
 
     /**
-     * Matrix custom constructor for already created two-dimensional array with specified size.
-     * Does not check if the dimensions are greater than 5
-     * Should not be used besides the CalculationTestPackage
+     * Matrix custom constructor for already created two-dimensional array with specified size
+     * Class designed for CalculationTest package and should only be used there
+     * Should only be used with correct values
      * @param mat Two-dimensional array
      */
     public Matrix(Double[][] mat) {
@@ -118,7 +121,7 @@ public class Matrix {
     }
 
     /**
-     * Methode used to set a value at a selected position in a matrix.
+     * Methode used to set a value at a selected position in a matrix
      * @param x Position along the columns
      * @param y Position along the rows
      * @param value A floating point value represented as a string
@@ -133,7 +136,9 @@ public class Matrix {
     }
 
     /**
-     * Methode used to set a value at a selected position in a matrix
+     * Methode used to set a value at a selected position in the matrix
+     * Class designed for MatrixService and should only be used there
+     * Should only be used with correct values
      * @param x Position along the columns
      * @param y Positions along the rows
      * @param value Value to set
@@ -143,12 +148,32 @@ public class Matrix {
     }
 
     /**
-     * Methode used to obtain the value at a selected position from the matrix.
+     * Methode used to obtain the value at a selected position from the matrix
+     * Class designed for MatrixService and should only be used there
+     * Should only be used with correct values
      * @param x Position along the columns
      * @param y Position along the rows
      * @return Value at the position
      */
     public Double getMatrixValueAtPos(int x, int y) {
         return this.mat.get(y).get(x);
+    }
+
+    /**
+     * Methode used to compare the matrix to a two-dimensional array
+     * Class designed for Tests and should only be used there
+     * Should only be used with correct values - the same matrix size
+     * @param tab value to compare to
+     * @return true if both arrays has the same elements in the same positions
+     */
+    public boolean compareMatrix(Double[][] tab) {
+        for (int i = 0; i < this.getNumberOfRows(); i++) {
+            for (int j = 0; j < this.getNumberOfColumns(); j++) {
+                if (!Objects.equals(this.getMatrixValueAtPos(j, i), tab[i][j])) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }

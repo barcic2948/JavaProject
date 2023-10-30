@@ -37,9 +37,7 @@ public class MatrixServiceTranspositionTest {
 
         Matrix mat = new Matrix(toTranspose);
 
-        matrixService.transposeMatrix(mat);
-
-        assertTrue(compareMatrix(mat, result));
+        assertTrue(matrixService.transposeMatrix(mat).compareMatrix(result));
     }
 
     @Test
@@ -58,7 +56,7 @@ public class MatrixServiceTranspositionTest {
 
         Matrix mat = new Matrix(toTranspose);
 
-        assertTrue(compareMatrix(matrixService.transposeMatrix(mat), result));
+        assertTrue(matrixService.transposeMatrix(mat).compareMatrix(result));
     }
     
     @Test
@@ -72,7 +70,7 @@ public class MatrixServiceTranspositionTest {
 
         Matrix mat = new Matrix(toTranspose);
 
-        assertTrue(compareMatrix(matrixService.transposeMatrix(mat), result));
+        assertTrue(matrixService.transposeMatrix(mat).compareMatrix(result));
 
     }
 
@@ -90,7 +88,7 @@ public class MatrixServiceTranspositionTest {
 
         Matrix mat = new Matrix(toTranspose);
 
-        assertTrue(compareMatrix(matrixService.transposeMatrix(mat), result));
+        assertTrue(matrixService.transposeMatrix(mat).compareMatrix(result));
     }
 
 }

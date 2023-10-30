@@ -6,11 +6,12 @@ package controller;
  * @author Bartek
  * @version 1.0
  */
-public class Main {
+public class CichyBartlomiejex1prototype {
     /**
      * the main function from which the program runs
      * @param args command line arguments
      */
+    
     public static void main(String[] args) {
         System.out.println("Hello World!");
         MatrixController matrixController = new MatrixController();

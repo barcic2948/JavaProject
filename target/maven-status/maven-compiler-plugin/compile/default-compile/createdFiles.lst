@@ -1,7 +1,10 @@
 model\Matrix.class
-view\MatrixService.class
+controller\CichyBartlomiejex1prototype.class
+view\MatrixIOService.class
+model\MatrixOperationTypeEnum.class
+model\MatrixService.class
 controller\MatrixController.class
-controller\Main.class
-model\MatrixDeterminant.class
+model\MatrixDimensionEnum.class
 model\MatrixDimensionException.class
 model\MatrixParseException.class
+controller\MatrixController$1.class

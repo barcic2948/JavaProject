@@ -147,24 +147,24 @@ public class MatrixController {
 
     /**
      * The main controller method, used to coordinate View and Model classes and their methods.
-     * @param args
+     * @param args Command line arguments
      */
     public void run(String[] args) {
 
-        boolean cond;
+        boolean cond = false;
         String input = "", numberOfRows = "", numberOfColumns = "";
 
-        if (args.length == 2) {
+        if (args.length == 1) {
+            input = args[0];
+        } else if (args.length == 2) {
             input = args[0];
             numberOfRows = args[1];
             numberOfColumns = "";
-            cond = false;
             matrixIOService.printMessage("Use --help to display instruction or --escape to exit the program");
         } else if (args.length == 3) {
             input = args[0];
             numberOfRows = args[1];
             numberOfColumns = args[2];
-            cond = false;
             matrixIOService.printMessage("Use --help to display instruction or --escape to exit the program");
         } else {
             matrixIOService.printHelp();
@@ -204,6 +204,7 @@ public class MatrixController {
                     break;
                 case HELP:
                     matrixIOService.printHelp();
+                    cond = true;
                     break;
             }
         }

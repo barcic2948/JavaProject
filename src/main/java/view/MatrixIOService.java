@@ -101,7 +101,7 @@ public class MatrixIOService {
     public void printReadArgs(String[] args) {
 
         if (args.length == 1) {
-            return;
+            System.out.println("Selected operation: " + args[0]);
         } else if (args.length == 2) {
             System.out.println("Selected operation: " + args[0] +
                     "\nSelected matrix dimension: " + args[1]);

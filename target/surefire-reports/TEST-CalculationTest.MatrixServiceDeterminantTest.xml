@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="CalculationTest.MatrixServiceDeterminantTest" time="0.021" tests="5" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="CalculationTest.MatrixServiceDeterminantTest" time="0.032" tests="5" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -13,11 +13,12 @@
     <property name="user.country.format" value="150"/>
     <property name="os.name" value="Windows 10"/>
     <property name="java.vm.specification.version" value="17"/>
-    <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="GB"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17\bin"/>
-    <property name="sun.java.command" value="C:\Users\Bartek\AppData\Local\Temp\surefire11850984620065982119\surefirebooter-20231030222304825_3.jar C:\Users\Bartek\AppData\Local\Temp\surefire11850984620065982119 2023-10-30T22-23-04_609-jvmRun1 surefire-20231030222304825_1tmp surefire_0-20231030222304825_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Bartek\AppData\Local\Temp\surefire7549457190373283713\surefirebooter-20231030225027311_3.jar C:\Users\Bartek\AppData\Local\Temp\surefire7549457190373283713 2023-10-30T22-50-27_028-jvmRun1 surefire-20231030225027311_1tmp surefire_0-20231030225027311_2tmp"/>
     <property name="jdk.debug" value="release"/>
+    <property name="test" value="CalculationTest.**.*Test"/>
     <property name="surefire.test.class.path" value="C:\Users\Bartek\Desktop\JavaProject\target\test-classes;C:\Users\Bartek\Desktop\JavaProject\target\classes;C:\Users\Bartek\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\Bartek\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Bartek\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.0\junit-jupiter-params-5.10.0.jar;C:\Users\Bartek\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.0\junit-jupiter-api-5.10.0.jar;C:\Users\Bartek\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Bartek\.m2\repository\org\junit\platform\junit-platform-commons\1.10.0\junit-platform-commons-1.10.0.jar;C:\Users\Bartek\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\Bartek"/>
@@ -31,7 +32,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Bartek\AppData\Local\Temp\surefire11850984620065982119\surefirebooter-20231030222304825_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Bartek\AppData\Local\Temp\surefire7549457190373283713\surefirebooter-20231030225027311_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.9+11-LTS-201"/>
@@ -39,12 +40,12 @@
     <property name="path.separator" value=";"/>
     <property name="os.version" value="10.0"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="file.encoding" value="Cp1252"/>
+    <property name="file.encoding" value="UTF-8"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="maven.ext.class.path" value="C:\Program Files\NetBeans-18\netbeans\java\maven-nblib\netbeans-eventspy.jar"/>
     <property name="localRepository" value="C:\Users\Bartek\.m2\repository"/>
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
     <property name="java.io.tmpdir" value="C:\Users\Bartek\AppData\Local\Temp\"/>
-    <property name="idea.version" value="2023.2.2"/>
     <property name="java.version" value="17.0.9"/>
     <property name="user.dir" value="C:\Users\Bartek\Desktop\JavaProject"/>
     <property name="os.arch" value="amd64"/>
@@ -58,7 +59,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="test1by1" classname="CalculationTest.MatrixServiceDeterminantTest" time="0.004"/>
+  <testcase name="test1by1" classname="CalculationTest.MatrixServiceDeterminantTest" time="0.012"/>
   <testcase name="test2by2" classname="CalculationTest.MatrixServiceDeterminantTest" time="0.001"/>
   <testcase name="test3by3" classname="CalculationTest.MatrixServiceDeterminantTest" time="0.001"/>
   <testcase name="test4by4" classname="CalculationTest.MatrixServiceDeterminantTest" time="0.001"/>

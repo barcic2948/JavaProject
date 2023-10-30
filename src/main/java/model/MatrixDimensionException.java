@@ -10,11 +10,11 @@ public class MatrixDimensionException extends Exception {
     /**
      * Enum containing possible exception reasons
      */
-    private MatrixDimensionEnum dimensionEnum;
+    private final MatrixDimensionEnum dimensionEnum;
 
     /**
      * Exception constructor
-     * @param dimensionEnum
+     * @param dimensionEnum MatrixDimension enum element to specify the type of exception
      */
     public MatrixDimensionException(MatrixDimensionEnum dimensionEnum) {
         super("Matrix dimension is not parsable");

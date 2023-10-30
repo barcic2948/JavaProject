@@ -33,7 +33,7 @@ public enum MatrixOperationTypeEnum {
     }
     /**
      * Getter for the enum value
-     * @return
+     * @return String value of the element
      */
     public String getValue() {
         return this.value;

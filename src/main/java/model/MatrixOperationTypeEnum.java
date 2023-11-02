@@ -2,6 +2,8 @@ package model;
 
 /**
  * Enum which contains all the possible operations that can be performed in the program.
+ * @author Bartek
+ * @version 1.2
  */
 public enum MatrixOperationTypeEnum {
     /**

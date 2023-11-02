@@ -2,6 +2,8 @@ package model;
 
 /**
  * Enum used to communicate the type of error when the exception is thrown.
+ * @author Bartek
+ * @version 1.0
  */
 public enum MatrixDimensionEnum {
 

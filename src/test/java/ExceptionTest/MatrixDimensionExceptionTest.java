@@ -3,12 +3,11 @@ package ExceptionTest;
 import model.Matrix;
 import model.enums.MatrixDimensionEnum;
 import model.exceptions.MatrixDimensionException;
-import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThrows;
 
 public class MatrixDimensionExceptionTest {
 

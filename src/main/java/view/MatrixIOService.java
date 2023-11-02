@@ -9,7 +9,7 @@ import java.util.Scanner;
  * Matrix Input Output Service class
  *
  * @author Bartek
- * @version 1.1
+ * @version 2.0
  */
 public class MatrixIOService {
 

@@ -7,13 +7,12 @@ import model.exceptions.MatrixParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * Class that contains all the information about the matrix dimensions and the data
  *
  * @author Bartek
- * @version 1.2
+ * @version 2.0
  */
 public class Matrix {
     /**

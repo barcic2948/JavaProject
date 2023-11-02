@@ -1,6 +1,7 @@
 package controller;
 
-import model.*;
+import model.Matrix;
+import model.MatrixService;
 import model.enums.MatrixDimensionEnum;
 import model.enums.MatrixOperationTypeEnum;
 import model.exceptions.MatrixDimensionException;
@@ -11,7 +12,7 @@ import view.MatrixIOService;
  * Main class of the application responsible for handling data received from IO-service and directing the model.
  *
  * @author Bartek
- * @version 1.3
+ * @version 2.0
  */
 public class MatrixController {
 

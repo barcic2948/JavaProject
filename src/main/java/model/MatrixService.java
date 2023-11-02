@@ -6,7 +6,7 @@ import java.util.Objects;
  * Class responsible for handling all mathematical operations on the Matrix object
  *
  * @author Bartek
- * @version 1.1
+ * @version 2.0
  */
 public class MatrixService {
 

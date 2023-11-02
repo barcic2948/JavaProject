@@ -6,7 +6,7 @@ import model.enums.MatrixDimensionEnum;
  * Dimension exception thrown when the user input for the dimension is invalid
  *
  * @author Bartek
- * @version 1.2
+ * @version 2.0
  */
 public class MatrixDimensionException extends Exception {
 

@@ -1,14 +1,10 @@
 package MatrixModelTest;
 
 import model.Matrix;
-import org.junit.Before;
-import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-
-import static org.junit.Assert.assertEquals;
 
 public class MatrixSetValueTest {
 

@@ -3,9 +3,10 @@ package controller;
 /**
  * Main class from which the program is run. This could be also done from within the MatrixController class
  * but for the sake of readability I have decided to split them
+ * cichy.bartlomiej.ex2.prototype
  *
  * @author Bartek
- * @version 1.0
+ * @version 2.0
  */
 public class CichyBartlomiejex1prototype {
     /**

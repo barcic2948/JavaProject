@@ -4,7 +4,7 @@ package model.exceptions;
  * Parse exception thrown when the input for the matrix at a certain position is not parsable.
  *
  * @author Bartek
- * @version 1.1
+ * @version 2.0
  */
 public class MatrixParseException extends Exception {
 

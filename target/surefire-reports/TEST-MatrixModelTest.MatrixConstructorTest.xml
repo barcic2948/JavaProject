@@ -13,12 +13,11 @@
     <property name="user.country.format" value="150"/>
     <property name="os.name" value="Windows 10"/>
     <property name="java.vm.specification.version" value="17"/>
-    <property name="user.country" value="GB"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="GB"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17\bin"/>
-    <property name="sun.java.command" value="C:\Users\Bartek\AppData\Local\Temp\surefire17030125055849123141\surefirebooter-20231102143829153_3.jar C:\Users\Bartek\AppData\Local\Temp\surefire17030125055849123141 2023-11-02T14-38-29_031-jvmRun1 surefire-20231102143829153_1tmp surefire_0-20231102143829153_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Bartek\AppData\Local\Temp\surefire1566024821536118230\surefirebooter-20231102150029238_3.jar C:\Users\Bartek\AppData\Local\Temp\surefire1566024821536118230 2023-11-02T15-00-29_041-jvmRun1 surefire-20231102150029238_1tmp surefire_0-20231102150029238_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="test" value="MatrixModelTest.**.*Test"/>
     <property name="surefire.test.class.path" value="C:\Users\Bartek\Desktop\JavaProject\target\test-classes;C:\Users\Bartek\Desktop\JavaProject\target\classes;C:\Users\Bartek\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\Bartek\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Bartek\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.0\junit-jupiter-params-5.10.0.jar;C:\Users\Bartek\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.0\junit-jupiter-api-5.10.0.jar;C:\Users\Bartek\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Bartek\.m2\repository\org\junit\platform\junit-platform-commons\1.10.0\junit-platform-commons-1.10.0.jar;C:\Users\Bartek\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\Bartek"/>
@@ -32,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Bartek\AppData\Local\Temp\surefire17030125055849123141\surefirebooter-20231102143829153_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Bartek\AppData\Local\Temp\surefire1566024821536118230\surefirebooter-20231102150029238_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.9+11-LTS-201"/>
@@ -40,12 +39,12 @@
     <property name="path.separator" value=";"/>
     <property name="os.version" value="10.0"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="file.encoding" value="UTF-8"/>
+    <property name="file.encoding" value="Cp1252"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
-    <property name="maven.ext.class.path" value="C:\Program Files\NetBeans-18\netbeans\java\maven-nblib\netbeans-eventspy.jar"/>
     <property name="localRepository" value="C:\Users\Bartek\.m2\repository"/>
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
     <property name="java.io.tmpdir" value="C:\Users\Bartek\AppData\Local\Temp\"/>
+    <property name="idea.version" value="2023.2.2"/>
     <property name="java.version" value="17.0.9"/>
     <property name="user.dir" value="C:\Users\Bartek\Desktop\JavaProject"/>
     <property name="os.arch" value="amd64"/>
@@ -62,6 +61,6 @@
   <testcase name="testConstructorFromStringRows" classname="MatrixModelTest.MatrixConstructorTest" time="0.001"/>
   <testcase name="testConstructorFromArrayColumns" classname="MatrixModelTest.MatrixConstructorTest" time="0.001"/>
   <testcase name="testConstructorFromArrayRows" classname="MatrixModelTest.MatrixConstructorTest" time="0"/>
-  <testcase name="testConstructorFromArrayMatrix" classname="MatrixModelTest.MatrixConstructorTest" time="0"/>
-  <testcase name="testConstructorFromStringColumns" classname="MatrixModelTest.MatrixConstructorTest" time="0"/>
+  <testcase name="testConstructorFromArrayMatrix" classname="MatrixModelTest.MatrixConstructorTest" time="0.001"/>
+  <testcase name="testConstructorFromStringColumns" classname="MatrixModelTest.MatrixConstructorTest" time="0.001"/>
 </testsuite>

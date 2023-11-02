@@ -1,5 +1,8 @@
 ExceptionTest\MatrixParseExceptionTest.class
 CalculationTest\MatrixServiceTranspositionTest.class
 MatrixModelTest\MatrixConstructorTest.class
+MatrixModelTest\MatrixSetValueTest.class
+MatrixModelTest\MatrixCompareTest.class
 CalculationTest\MatrixServiceDeterminantTest.class
+MatrixModelTest\MatrixGetValueTest.class
 ExceptionTest\MatrixDimensionExceptionTest.class

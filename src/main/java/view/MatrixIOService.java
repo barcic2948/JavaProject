@@ -96,9 +96,7 @@ public class MatrixIOService {
             }
         }
 
-        for (String[] s : tab) {
-            System.out.println(Arrays.toString(s));
-        }
+        Arrays.stream(tab).forEach(System.out::println);
     }
 
     /**

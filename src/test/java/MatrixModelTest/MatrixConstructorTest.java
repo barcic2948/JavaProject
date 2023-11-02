@@ -1,6 +1,8 @@
 package MatrixModelTest;
 
 import model.Matrix;
+import model.MatrixService;
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -10,40 +12,47 @@ public class MatrixConstructorTest {
 
     private Matrix matrix;
 
+    private MatrixService matrixService;
+
+    @Before
+    public void prepService() {
+        matrixService = new MatrixService();
+    }
+
     @Test
-    public void constructorFromArrayColumnsTest() {
-        Double[][] tab = {{1.0,2.0},
-                {4.0,5.0},
-                {9.0,7.0}};
+    public void testConstructorFromArrayColumns() {
+        Double[][] tab = {{1.0, 2.0},
+                {4.0, 5.0},
+                {9.0, 7.0}};
         matrix = new Matrix(tab);
 
         assertEquals("Matrix columns size was read incorrectly", matrix.getNumberOfColumns(), 2);
     }
 
     @Test
-    public void constructorFromArrayRowsTest() {
-        Double[][] tab = {{1.0,2.0},
-                {4.0,5.0},
-                {9.0,7.0}};
+    public void testConstructorFromArrayRows() {
+        Double[][] tab = {{1.0, 2.0},
+                {4.0, 5.0},
+                {9.0, 7.0}};
         matrix = new Matrix(tab);
 
         assertEquals("Matrix rows size was read incorrectly", matrix.getNumberOfRows(), 3);
     }
 
     @Test
-    public void constructorFromArrayMatrixTest() {
-        Double[][] tab = {{1.0,2.0},
-                          {4.0,5.0},
-                          {9.0,7.0}};
+    public void testConstructorFromArrayMatrix() {
+        Double[][] tab = {{1.0, 2.0},
+                {4.0, 5.0},
+                {9.0, 7.0}};
 
         matrix = new Matrix(tab);
 
-        assertTrue("Matrix was not copied correctly", matrix.compareMatrix(tab));
+        assertTrue("Matrix was not copied correctly", matrixService.compareMatrix(matrix, tab));
 
     }
 
     @Test
-    public void constructorFromStringRowsTest() {
+    public void testConstructorFromStringRows() {
         try {
             matrix = new Matrix("4", "5");
         } catch (Exception ignored) {
@@ -52,7 +61,7 @@ public class MatrixConstructorTest {
     }
 
     @Test
-    public void constructorFromStringColumnsTest() {
+    public void testConstructorFromStringColumns() {
         try {
             matrix = new Matrix("4", "5");
         } catch (Exception ignored) {

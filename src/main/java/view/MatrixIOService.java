@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 /**
  * Matrix Input Output Service class
+ *
  * @author Bartek
  * @version 1.1
  */
@@ -26,6 +27,7 @@ public class MatrixIOService {
 
     /**
      * Methode responsible for obtaining user input for the selected coordinate
+     *
      * @param posX Coordinate for the columns (x-axis)
      * @param posY Coordinate for the rows (y-axis)
      * @return String user input
@@ -37,6 +39,7 @@ public class MatrixIOService {
 
     /**
      * Methode used to receive user input, after presenting them with a message inline
+     *
      * @param message Massage that is printed out before allowing input
      * @return String user input
      */
@@ -47,6 +50,7 @@ public class MatrixIOService {
 
     /**
      * Methode used to print exception message
+     *
      * @param e Exception
      */
     public void printExceptionMessage(Exception e) {
@@ -55,6 +59,7 @@ public class MatrixIOService {
 
     /**
      * Methode used to print a 2dimensional array from the Matrix class
+     *
      * @param matrix Matrix object to print
      */
     public void printMatrix(Matrix matrix) {
@@ -65,6 +70,7 @@ public class MatrixIOService {
 
     /**
      * Simple methode for printing message
+     *
      * @param message String message to "print"
      */
     public void printMessage(String message) {
@@ -74,8 +80,9 @@ public class MatrixIOService {
     /**
      * Methode used to show the user how the matrix will be filled in the latter steps
      * Prints a mock matrix with coordinates(x, y) for each field
+     *
      * @param numberOfColumns Number of columns in the matrix
-     * @param numberOfRows Number of rows in the matrix
+     * @param numberOfRows    Number of rows in the matrix
      */
     public void printMatrixFillSchema(int numberOfColumns, int numberOfRows) {
 
@@ -96,6 +103,7 @@ public class MatrixIOService {
 
     /**
      * Methode used to print the input parameters from the command line
+     *
      * @param args Input arguments from the command line
      */
     public void printReadArgs(String[] args) {

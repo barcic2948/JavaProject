@@ -37,58 +37,58 @@ public class MatrixServiceTranspositionTest {
 
         Matrix mat = new Matrix(toTranspose);
 
-        assertTrue(matrixService.transposeMatrix(mat).compareMatrix(result));
+        assertTrue(matrixService.compareMatrix(matrixService.transposeMatrix(mat), result));
     }
 
     @Test
     public void testTranspositionSquare5by5() {
         Double[][] toTranspose = {{1.0, 2.0, 3.0, 4.0, 5.0},
-                                  {5.0, 6.0, 7.0, 8.0, 9.0},
-                                  {9.0, 10.0, 11.0, 12.0, 13.0},
-                                  {20.0, 21.0, 22.0, 23.0, 24.0},
-                                  {20.0, 21.0, 22.0, 23.0, 24.0}};
+                {5.0, 6.0, 7.0, 8.0, 9.0},
+                {9.0, 10.0, 11.0, 12.0, 13.0},
+                {20.0, 21.0, 22.0, 23.0, 24.0},
+                {20.0, 21.0, 22.0, 23.0, 24.0}};
 
         Double[][] result = {{1.0, 5.0, 9.0, 20.0, 20.0},
-                              {2.0, 6.0, 10.0, 21.0, 21.0},
-                              {3.0, 7.0, 11.0, 22.0, 22.0},
-                              {4.0, 8.0, 12.0, 23.0, 23.0},
-                              {5.0, 9.0, 13.0, 24.0, 24.0}};
+                {2.0, 6.0, 10.0, 21.0, 21.0},
+                {3.0, 7.0, 11.0, 22.0, 22.0},
+                {4.0, 8.0, 12.0, 23.0, 23.0},
+                {5.0, 9.0, 13.0, 24.0, 24.0}};
 
         Matrix mat = new Matrix(toTranspose);
 
-        assertTrue(matrixService.transposeMatrix(mat).compareMatrix(result));
+        assertTrue(matrixService.compareMatrix(matrixService.transposeMatrix(mat), result));
     }
-    
+
     @Test
     public void testTranspositionNotSquare1by5() {
         Double[][] toTranspose = {{1.0, 2.0, 3.0, 4.0, 5.0}};
         Double[][] result = {{1.0},
-                             {2.0},
-                             {3.0},
-                             {4.0},
-                             {5.0}};
+                {2.0},
+                {3.0},
+                {4.0},
+                {5.0}};
 
         Matrix mat = new Matrix(toTranspose);
 
-        assertTrue(matrixService.transposeMatrix(mat).compareMatrix(result));
+        assertTrue(matrixService.compareMatrix(matrixService.transposeMatrix(mat), result));
 
     }
 
     @Test
-    public void testTranspositionNotSquare3by3() {
+    public void testTranspositionNotSquare3by5() {
         Double[][] toTranspose = {{1.0, 2.0, 3.0},
-                                  {5.0, 6.0, 7.0},
-                                  {9.0, 10.0, 11.0},
-                                  {20.0, 21.0, 22.0},
-                                  {20.0, 21.0, 22.0}};
+                {5.0, 6.0, 7.0},
+                {9.0, 10.0, 11.0},
+                {20.0, 21.0, 22.0},
+                {20.0, 21.0, 22.0}};
 
         Double[][] result = {{1.0, 5.0, 9.0, 20.0, 20.0},
-                             {2.0, 6.0, 10.0, 21.0, 21.0},
-                             {3.0, 7.0, 11.0, 22.0, 22.0}};
+                {2.0, 6.0, 10.0, 21.0, 21.0},
+                {3.0, 7.0, 11.0, 22.0, 22.0}};
 
         Matrix mat = new Matrix(toTranspose);
 
-        assertTrue(matrixService.transposeMatrix(mat).compareMatrix(result));
+        assertTrue(matrixService.compareMatrix(matrixService.transposeMatrix(mat), result));
     }
 
 }

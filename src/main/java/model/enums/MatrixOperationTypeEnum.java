@@ -1,13 +1,14 @@
-package model;
+package model.enums;
 
 /**
  * Enum which contains all the possible operations that can be performed in the program.
+ *
  * @author Bartek
  * @version 1.2
  */
 public enum MatrixOperationTypeEnum {
     /**
-     *  Transpose matrix operation
+     * Transpose matrix operation
      */
     TRANSPOSE("--transpose"),
     /**
@@ -15,26 +16,30 @@ public enum MatrixOperationTypeEnum {
      */
     DETERMINANT("--determinant"),
     /**
-     *  Print program help page
+     * Print program help page
      */
     HELP("--help"),
     /**
-     *  Exit the program
+     * Exit the program
      */
     ESCAPE("--escape");
     /**
-     *  String value used to link each enum value to it's corresponding input string value
+     * String value used to link each enum value to it's corresponding input string value
      */
     private String value;
+
     /**
      * Private constructor for enum with value
-     * @param value
+     *
+     * @param value String value for enum
      */
-    private MatrixOperationTypeEnum(String value) {
+    MatrixOperationTypeEnum(String value) {
         this.value = value;
     }
+
     /**
      * Getter for the enum value
+     *
      * @return String value of the element
      */
     public String getValue() {
@@ -43,6 +48,7 @@ public enum MatrixOperationTypeEnum {
 
     /**
      * Method selects corresponding enum element when provided with string input
+     *
      * @param s String input value
      * @return MatrixOperationTypeEnum element
      * @throws IllegalArgumentException If s input value does not match any of those specified in the value field.

@@ -1,7 +1,10 @@
 package model;
 
+import java.util.Objects;
+
 /**
  * Class responsible for handling all mathematical operations on the Matrix object
+ *
  * @author Bartek
  * @version 1.1
  */
@@ -9,14 +12,14 @@ public class MatrixService {
 
     /**
      * Helper methode used to create a minor matrix for the element designated by the step argument
+     *
      * @param origin original matrix to be split
-     * @param step column with the element to create minor matrix for
+     * @param step   column with the element to create minor matrix for
      * @return Matrix object containing the minor
      */
     private Matrix createSubMatrix(Matrix origin, int step) {
 
         Matrix next = new Matrix(origin.getNumberOfColumns() - 1, origin.getNumberOfRows() - 1);
-
 
         for (int i = 1; i < origin.getNumberOfColumns(); i++) {
             int j2 = 0;
@@ -32,6 +35,7 @@ public class MatrixService {
 
     /**
      * Recursive method used to calculate the determinant of a matrix with the minors methode
+     *
      * @param matrix Input matrix for which we want to calculate the determinant
      * @return Double result of the calculation
      */
@@ -55,6 +59,7 @@ public class MatrixService {
 
     /**
      * Methode for transposing matrix
+     *
      * @param matrix Input matrix which we want to transpose
      * @return Transposed Matrix object
      */
@@ -68,5 +73,24 @@ public class MatrixService {
             }
         }
         return result;
+    }
+
+    /**
+     * Methode used to compare the matrix to a two-dimensional array
+     * Class designed for Tests and should only be used there
+     * Should only be used with correct values - the same matrix size
+     *
+     * @param tab value to compare to
+     * @return true if both arrays has the same elements in the same positions
+     */
+    public boolean compareMatrix(Matrix mat, Double[][] tab) {
+        for (int i = 0; i < mat.getNumberOfRows(); i++) {
+            for (int j = 0; j < mat.getNumberOfColumns(); j++) {
+                if (!Objects.equals(mat.getMatrixValueAtPos(j, i), tab[i][j])) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }

@@ -1,10 +1,15 @@
 package controller;
 
 import model.*;
+import model.enums.MatrixDimensionEnum;
+import model.enums.MatrixOperationTypeEnum;
+import model.exceptions.MatrixDimensionException;
+import model.exceptions.MatrixParseException;
 import view.MatrixIOService;
 
 /**
  * Main class of the application responsible for handling data received from IO-service and directing the model.
+ *
  * @author Bartek
  * @version 1.3
  */
@@ -55,9 +60,10 @@ public class MatrixController {
 
     /**
      * Method used to select operation. Original version with the use of static enum class methode
-     * @deprecated
+     *
      * @param input String containing operation name
      * @return MatrixOperationTypeEnum element corresponding to the input
+     * @deprecated
      */
     private MatrixOperationTypeEnum selectOperation(String input) {
         while (true) {
@@ -72,6 +78,7 @@ public class MatrixController {
 
     /**
      * Method used to select operation. Proper version without the use of static methods.
+     *
      * @param input String containing the user input operation name (can be incorrect)
      * @return MatrixOperationTypeEnum element corresponding to the input
      */
@@ -97,6 +104,7 @@ public class MatrixController {
     /**
      * Method that prepares the square matrix (creates new object, sets its dimension)
      * If the input data is incorrect, the program will ask the user to correct it until it is.
+     *
      * @param dimension String containing the matrix dimension specified by user input (can be incorrect)
      * @return Matrix class object
      */
@@ -105,10 +113,7 @@ public class MatrixController {
             try {
                 return new Matrix(dimension, dimension);
             } catch (MatrixDimensionException e) {
-                if (MatrixDimensionEnum.SQUARE.equals(e.getEnum())) {
-                    dimension = matrixIOService.getValueWithMessage(
-                            "Value for the square matrix dimension is wrong or missing, please correct it: ");
-                } else if (MatrixDimensionEnum.SIZE_COLUMNS.equals(e.getEnum())) {
+                 if (MatrixDimensionEnum.SIZE_COLUMNS.equals(e.getEnum())) {
                     dimension = matrixIOService.getValueWithMessage(
                             "The maximum size of the matrix is 5 by 5, please correct the dimension: ");
                 }
@@ -119,8 +124,9 @@ public class MatrixController {
     /**
      * Method that prepares the matrix (creates new object, sets its dimensions).
      * If the input data is incorrect, the program will ask the user to correct it until it is.
+     *
      * @param numberOfColumns String containing the number of columns specified by user input (can be incorrect)
-     * @param numberOfRows String containing the number of rows specified by user input (can be incorrect)
+     * @param numberOfRows    String containing the number of rows specified by user input (can be incorrect)
      * @return Matrix class object
      */
     private Matrix prepareMatrix(String numberOfColumns, String numberOfRows) {
@@ -147,6 +153,7 @@ public class MatrixController {
 
     /**
      * The main controller method, used to coordinate View and Model classes and their methods.
+     *
      * @param args Command line arguments
      */
     public void run(String[] args) {

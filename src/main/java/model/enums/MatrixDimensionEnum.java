@@ -1,4 +1,4 @@
-package model;
+package model.enums;
 
 /**
  * Enum used to communicate the type of error when the exception is thrown.
@@ -6,11 +6,6 @@ package model;
  * @version 1.0
  */
 public enum MatrixDimensionEnum {
-
-    /**
-     * Matrix is not square
-     */
-    SQUARE,
 
     /**
      * Matrix columns value is invalid

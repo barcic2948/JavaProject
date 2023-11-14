@@ -16,7 +16,6 @@ public class CichyBartlomiejex1prototype {
      */
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
         MatrixController matrixController = new MatrixController();
 
         matrixController.run(args);

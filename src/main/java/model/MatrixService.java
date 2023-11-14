@@ -81,6 +81,7 @@ public class MatrixService {
      * Should only be used with correct values - the same matrix size
      *
      * @param tab value to compare to
+     * @param mat value to compare
      * @return true if both arrays has the same elements in the same positions
      */
     public boolean compareMatrix(Matrix mat, Double[][] tab) {

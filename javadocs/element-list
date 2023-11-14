@@ -1,7 +1,4 @@
-calculationtest
 controller
-exceptiontest
-matrixmodeltest
 model
 model.enums
 model.exceptions

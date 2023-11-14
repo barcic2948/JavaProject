@@ -116,7 +116,7 @@ public class Matrix {
 
     /**
      * Matrix custom constructor for already created two-dimensional array with specified size
-     * Class designed for CalculationTest package and should only be used there
+     * Class designed for calculationtest package and should only be used there
      * Should only be used with correct values
      *
      * @param mat Two-dimensional array

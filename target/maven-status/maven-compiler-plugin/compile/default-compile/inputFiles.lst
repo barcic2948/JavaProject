@@ -1,9 +1,14 @@
-C:\Users\Bartek\Desktop\JavaProject\src\main\java\controller\CichyBartlomiejex1prototype.java
-C:\Users\Bartek\Desktop\JavaProject\src\main\java\controller\MatrixController.java
-C:\Users\Bartek\Desktop\JavaProject\src\main\java\model\Matrix.java
-C:\Users\Bartek\Desktop\JavaProject\src\main\java\view\MatrixIOService.java
-C:\Users\Bartek\Desktop\JavaProject\src\main\java\model\enums\MatrixDimensionEnum.java
-C:\Users\Bartek\Desktop\JavaProject\src\main\java\model\exceptions\MatrixDimensionException.java
-C:\Users\Bartek\Desktop\JavaProject\src\main\java\model\exceptions\MatrixParseException.java
-C:\Users\Bartek\Desktop\JavaProject\src\main\java\model\MatrixService.java
-C:\Users\Bartek\Desktop\JavaProject\src\main\java\model\enums\MatrixOperationTypeEnum.java
+C:\Users\barci\Desktop\studia\Java labs\cichy.bartlomiej.ex1.final\src\main\java\model\exceptions\MatrixParseException.java
+C:\Users\barci\Desktop\studia\Java labs\cichy.bartlomiej.ex1.final\src\main\java\model\exceptions\MatrixDimensionException.java
+C:\Users\barci\Desktop\studia\Java labs\cichy.bartlomiej.ex1.final\src\main\java\view\MatrixIOService.java
+C:\Users\barci\Desktop\studia\Java labs\cichy.bartlomiej.ex1.final\src\main\java\view\package-info.java
+C:\Users\barci\Desktop\studia\Java labs\cichy.bartlomiej.ex1.final\src\main\java\model\package-info.java
+C:\Users\barci\Desktop\studia\Java labs\cichy.bartlomiej.ex1.final\src\main\java\model\exceptions\package-info.java
+C:\Users\barci\Desktop\studia\Java labs\cichy.bartlomiej.ex1.final\src\main\java\model\enums\MatrixOperationTypeEnum.java
+C:\Users\barci\Desktop\studia\Java labs\cichy.bartlomiej.ex1.final\src\main\java\controller\MatrixController.java
+C:\Users\barci\Desktop\studia\Java labs\cichy.bartlomiej.ex1.final\src\main\java\model\enums\MatrixDimensionEnum.java
+C:\Users\barci\Desktop\studia\Java labs\cichy.bartlomiej.ex1.final\src\main\java\model\enums\package-info.java
+C:\Users\barci\Desktop\studia\Java labs\cichy.bartlomiej.ex1.final\src\main\java\controller\package-info.java
+C:\Users\barci\Desktop\studia\Java labs\cichy.bartlomiej.ex1.final\src\main\java\model\Matrix.java
+C:\Users\barci\Desktop\studia\Java labs\cichy.bartlomiej.ex1.final\src\main\java\controller\CichyBartlomiejex1prototype.java
+C:\Users\barci\Desktop\studia\Java labs\cichy.bartlomiej.ex1.final\src\main\java\model\MatrixService.java

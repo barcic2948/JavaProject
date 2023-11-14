@@ -1,4 +1,4 @@
-package CalculationTest;
+package calculationtest;
 
 import model.Matrix;
 import model.MatrixService;

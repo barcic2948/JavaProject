@@ -1,4 +1,4 @@
-package MatrixModelTest;
+package matrixmodeltest;
 
 import model.Matrix;
 import org.junit.Test;

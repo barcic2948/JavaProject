@@ -1,4 +1,4 @@
-package ExceptionTest;
+package exceptiontest;
 
 import model.Matrix;
 import model.enums.MatrixDimensionEnum;

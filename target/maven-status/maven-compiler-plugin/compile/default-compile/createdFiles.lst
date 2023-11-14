@@ -1,10 +1,15 @@
-model\exceptions\MatrixDimensionException.class
+model\package-info.class
 model\exceptions\MatrixParseException.class
+view\package-info.class
 model\Matrix.class
 controller\CichyBartlomiejex1prototype.class
 model\enums\MatrixOperationTypeEnum.class
 view\MatrixIOService.class
+controller\package-info.class
+model\exceptions\MatrixDimensionException.class
 model\MatrixService.class
 controller\MatrixController.class
+model\enums\package-info.class
 model\enums\MatrixDimensionEnum.class
+model\exceptions\package-info.class
 controller\MatrixController$1.class

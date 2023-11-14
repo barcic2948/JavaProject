@@ -5,4 +5,4 @@
  * @version 2.0
  * @author Bartek
  */
-package ExceptionTest;
+package exceptiontest;

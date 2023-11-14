@@ -1,5 +1,5 @@
 /**
- * Package containing enums used in the model package
+ * Package containing enums used in the model package.
  *
  * @since 1.0
  * @version 2.0

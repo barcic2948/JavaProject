@@ -7,6 +7,7 @@ import model.enums.MatrixOperationTypeEnum;
 import model.exceptions.MatrixDimensionException;
 import model.exceptions.MatrixParseException;
 import view.MatrixIOService;
+import view.MatrixSpringView;
 
 /**
  * Main class of the application responsible for handling data received from IO-service and directing the model.
@@ -19,7 +20,12 @@ public class MatrixController {
     /**
      * Matrix service object
      */
-    private final MatrixIOService matrixIOService;
+    private MatrixIOService matrixIOService;
+
+    /**
+     * MatrixSpringView object
+     */
+    private MatrixSpringView matrixSpringView;
 
     /**
      * Matrix service object
@@ -34,7 +40,7 @@ public class MatrixController {
      * Constructor for the class, to initialise the Input/Output service used in both methods.
      */
     public MatrixController() {
-        matrixIOService = new MatrixIOService();
+
     }
 
     /**
@@ -159,6 +165,8 @@ public class MatrixController {
      */
     public void run(String[] args) {
 
+        matrixIOService = new MatrixIOService();
+
         boolean cond = false;
         String input = "", numberOfRows = "", numberOfColumns = "";
 
@@ -216,5 +224,10 @@ public class MatrixController {
                     break;
             }
         }
+    }
+
+    public void runSpringApp() {
+        matrixSpringView = new MatrixSpringView();
+        matrixSpringView.run();
     }
 }

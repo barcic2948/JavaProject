@@ -1,5 +1,7 @@
 package controller;
 
+import view.MatrixSpringView;
+
 /**
  * Main class from which the program is run. This could be also done from within the MatrixController class
  * but for the sake of readability I have decided to split them
@@ -18,6 +20,6 @@ public class CichyBartlomiejex1prototype {
     public static void main(String[] args) {
         MatrixController matrixController = new MatrixController();
 
-        matrixController.run(args);
+        matrixController.runSpringApp();
     }
 }

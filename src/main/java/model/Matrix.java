@@ -9,7 +9,9 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Class that contains all the information about the matrix dimensions and the data
+ * Represents a matrix with dimensions and data.
+ * <p>
+ * Contains methods to access and manipulate matrix elements.
  *
  * @author Bartek
  * @version 2.0
@@ -31,7 +33,7 @@ public class Matrix {
     private List<List<Double>> mat;
 
     /**
-     * Method for filling the matrix with null values. Necessary for set and get functions of the collection.
+     * Fills the matrix with null values, necessary for set and get functions of the collection.
      */
     private void prepareMatrix() {
         this.mat = new ArrayList<>(this.numberOfRows);
@@ -45,38 +47,38 @@ public class Matrix {
     }
 
     /**
-     * Getter for the first dimension
+     * Gets the number of columns in the matrix.
      *
-     * @return Integer numberOfColumns
+     * @return The number of columns.
      */
     public int getNumberOfColumns() {
         return numberOfColumns;
     }
 
     /**
-     * Getter for the second dimension
+     * Gets the number of rows in the matrix.
      *
-     * @return Integer numberOfColumns
+     * @return The number of rows.
      */
     public int getNumberOfRows() {
         return numberOfRows;
     }
 
     /**
-     * Getter for the matrix two-dimensional array
+     * Gets the two-dimensional list representing the matrix.
      *
-     * @return Two-dimensional array
+     * @return The matrix as a two-dimensional list.
      */
     public List<List<Double>> getMat() {
         return mat;
     }
 
     /**
-     * Matrix custom constructor
+     * Constructs a matrix with specified dimensions.
      *
-     * @param numberOfColumns Non-negative integer, not greater than 5
-     * @param numberOfRows    Non-negative integer, not greater than 5
-     * @throws MatrixDimensionException Thrown if input parameters are absent or not parsable
+     * @param numberOfColumns The number of columns (not greater than 5, non-negative integer).
+     * @param numberOfRows    The number of rows (not greater than 5, non-negative integer).
+     * @throws MatrixDimensionException Thrown if input parameters are absent or not parsable.
      */
     public Matrix(String numberOfColumns, String numberOfRows) throws MatrixDimensionException {
 
@@ -101,12 +103,10 @@ public class Matrix {
     }
 
     /**
-     * Matrix custom constructor for Integer values
-     * Class designed for MatrixService and should only be used there
-     * Should only be used with correct values
+     * Constructs a matrix with specified dimensions (for Integer values).
      *
-     * @param numberOfColumns Integer value
-     * @param numberOfRows    Integer value
+     * @param numberOfColumns The number of columns (integer value).
+     * @param numberOfRows    The number of rows (integer value).
      */
     public Matrix(int numberOfColumns, int numberOfRows) {
         this.numberOfColumns = numberOfColumns;
@@ -115,11 +115,9 @@ public class Matrix {
     }
 
     /**
-     * Matrix custom constructor for already created two-dimensional array with specified size
-     * Class designed for calculationtest package and should only be used there
-     * Should only be used with correct values
+     * Constructs a matrix from an already created two-dimensional array with specified size.
      *
-     * @param mat Two-dimensional array
+     * @param mat The two-dimensional array to construct the matrix from.
      */
     public Matrix(Double[][] mat) {
         this.numberOfColumns = mat[0].length;
@@ -131,24 +129,40 @@ public class Matrix {
     }
 
     /**
-     * Matrix custom constructor for copying already existing list with specified size
-     * Should only be used with correct values
+     * Constructs a matrix from given dimensions and elements.
      *
-     * @param mat Two-dimensional array
+     * @param numberOfRows    Number of rows.
+     * @param numberOfColumns Number of columns.
+     * @param elements        List of string elements to populate the matrix.
+     * @throws MatrixParseException Thrown if elements cannot be parsed as Double values.
      */
-    private Matrix(List<List<Double>> mat) {
-        this.numberOfColumns = mat.get(0).size();
-        this.numberOfRows = mat.size();
-        this.mat = new ArrayList<>(mat);
+    public Matrix(int numberOfRows, int numberOfColumns, List<String> elements) throws MatrixParseException {
+
+
+        this.numberOfColumns = numberOfColumns;
+        this.numberOfRows = numberOfRows;
+
+        prepareMatrix();
+
+        for (int y = 0; y < this.numberOfRows; y++) {
+            for (int x = 0; x < this.numberOfColumns; x++) {
+                try {
+                    this.mat.get(y).set(x, Double.valueOf(elements.get(y * this.numberOfColumns + x)));
+                } catch (NumberFormatException e) {
+                    throw new MatrixParseException(x, y, elements.get(y * this.numberOfColumns + x));
+                }
+            }
+        }
+
     }
 
     /**
-     * Methode used to set a value at a selected position in a matrix
+     * Sets a value at a specified position in the matrix.
      *
-     * @param x     Position along the columns
-     * @param y     Position along the rows
-     * @param value A floating point value represented as a string
-     * @throws MatrixParseException Thrown if the value is not parsable or empty
+     * @param x     Column position.
+     * @param y     Row position.
+     * @param value A floating point value represented as a string.
+     * @throws MatrixParseException Thrown if the value is not parsable or empty.
      */
     public void setMatrixValueAtPos(int x, int y, String value) throws MatrixParseException {
         try {
@@ -159,26 +173,22 @@ public class Matrix {
     }
 
     /**
-     * Methode used to set a value at a selected position in the matrix
-     * Class designed for MatrixService and should only be used there
-     * Should only be used with correct values
+     * Sets a value at a specified position in the matrix.
      *
-     * @param x     Position along the columns
-     * @param y     Positions along the rows
-     * @param value Value to set
+     * @param x     Column position.
+     * @param y     Row position.
+     * @param value Value to set.
      */
     public void setMatrixValueAtPos(int x, int y, Double value) {
         this.mat.get(y).set(x, value);
     }
 
     /**
-     * Methode used to obtain the value at a selected position from the matrix
-     * Class designed for MatrixService and should only be used there
-     * Should only be used with correct values
+     * Gets a value from a specified position in the matrix.
      *
-     * @param x Position along the columns
-     * @param y Position along the rows
-     * @return Value at the position
+     * @param x Column position.
+     * @param y Row position.
+     * @return Value at the position.
      */
     public Double getMatrixValueAtPos(int x, int y) {
         return this.mat.get(y).get(x);

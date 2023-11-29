@@ -7,7 +7,6 @@ import model.enums.MatrixOperationTypeEnum;
 import model.exceptions.MatrixDimensionException;
 import model.exceptions.MatrixParseException;
 import view.MatrixIOService;
-import view.MatrixSpringView;
 
 /**
  * Main class of the application responsible for handling data received from IO-service and directing the model.
@@ -21,11 +20,6 @@ public class MatrixController {
      * Matrix service object
      */
     private MatrixIOService matrixIOService;
-
-    /**
-     * MatrixSpringView object
-     */
-    private MatrixSpringView matrixSpringView;
 
     /**
      * Matrix service object
@@ -120,7 +114,7 @@ public class MatrixController {
             try {
                 return new Matrix(dimension, dimension);
             } catch (MatrixDimensionException e) {
-                 if (MatrixDimensionEnum.SIZE_COLUMNS.equals(e.getEnum())) {
+                if (MatrixDimensionEnum.SIZE_COLUMNS.equals(e.getEnum())) {
                     dimension = matrixIOService.getValueWithMessage(
                             "The maximum size of the matrix is 5 by 5, please correct the dimension: ");
                 }
@@ -224,10 +218,5 @@ public class MatrixController {
                     break;
             }
         }
-    }
-
-    public void runSpringApp() {
-        matrixSpringView = new MatrixSpringView();
-        matrixSpringView.run();
     }
 }

@@ -1,6 +1,6 @@
 package controller;
 
-import view.MatrixSpringView;
+import javax.swing.*;
 
 /**
  * Main class from which the program is run. This could be also done from within the MatrixController class
@@ -18,8 +18,16 @@ public class CichyBartlomiejex1prototype {
      */
 
     public static void main(String[] args) {
-        MatrixController matrixController = new MatrixController();
+        //MatrixController matrixController = new MatrixController();
 
-        matrixController.runSpringApp();
+        //matrixController.run(args);
+
+        SwingUtilities.invokeLater(() -> {
+            MatrixSwingController controller = new MatrixSwingController();
+            controller.setVisible(true);
+            controller.runSwingApp();
+        });
+
+
     }
 }

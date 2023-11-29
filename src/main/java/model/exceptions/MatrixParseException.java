@@ -9,8 +9,15 @@ package model.exceptions;
  */
 public class MatrixParseException extends Exception {
 
-    private final int x; // Represents the column position where parsing failed
-    private final int y; // Represents the row position where parsing failed
+    /**
+     * Represents the column position where parsing failed
+     */
+    private final int x;
+
+    /**
+     * Represents the row position where parsing failed
+     */
+    private final int y;
 
     /**
      * Constructs a MatrixParseException with the specified coordinates and incorrect input value.
